@@ -29,12 +29,10 @@ class Table extends Component {
         this.state.total = 0;
     }
     calcResult = () => {
-        this.setState({
-            total: (this.state.puma.worker * this.state.puma.pul * this.state.puma.cars * this.state.puma.reserve) +
+       let total = (this.state.puma.worker * this.state.puma.pul * this.state.puma.cars * this.state.puma.reserve) +
             (this.state.ck1.worker * this.state.ck1.pul * this.state.ck1.cars * this.state.ck1.reserve) +
-            (this.state.ck2.worker * this.state.ck2.pul * this.state.ck2.cars * this.state.ck2.reserve)
-
-        });
+            (this.state.ck2.worker * this.state.ck2.pul * this.state.ck2.cars * this.state.ck2.reserve);
+        return total;
     }
     render() {
         return (
@@ -75,7 +73,7 @@ class Table extends Component {
                     </tr>
                     <tr>
                         <td>Итого:</td>
-                        <td className="td-result" colSpan="3" onClick={this.calcResult}><Input value={this.state.total} /> </td>
+                        <td className="td-result" colSpan="3">{this.calcResult()} </td>
                     </tr>
                     </tbody>
                 </table>
