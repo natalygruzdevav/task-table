@@ -39,9 +39,9 @@ class Table extends Component {
         });
     }
     calcResult = () => {
-        return (this.state.puma.worker * this.state.puma.pul * this.state.puma.cars * this.state.puma.reserve) +
-            (this.state.ck1.worker * this.state.ck1.pul * this.state.ck1.cars * this.state.ck1.reserve) +
-            (this.state.ck2.worker * this.state.ck2.pul * this.state.ck2.cars * this.state.ck2.reserve);
+        return (this.state.puma.worker * this.state.puma.pul * this.state.puma.cars + this.state.puma.reserve) +
+            (this.state.ck1.worker * this.state.ck1.pul * this.state.ck1.cars + this.state.ck1.reserve) +
+            (this.state.ck2.worker * this.state.ck2.pul * this.state.ck2.cars + this.state.ck2.reserve);
     }
     render() {
         console.log(this.state);

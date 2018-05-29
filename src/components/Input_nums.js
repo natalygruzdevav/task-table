@@ -7,7 +7,7 @@ export default class Input extends Component {
 };
 
     updateInputValue = (evt) => {
-        this.props.onUpdate(evt.target.value, this.props.path);
+        this.props.onUpdate(Number(evt.target.value), this.props.path);
     }
     render(){
         return (
