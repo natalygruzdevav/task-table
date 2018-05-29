@@ -4,17 +4,10 @@ export default class Input extends Component {
     constructor(props) {
         super(props);
         this.updateInputValue = this.updateInputValue.bind(this);
-        this.state = {
-            inputValue: 1
-        };
 };
 
     updateInputValue = (evt) => {
-        this.setState({
-            inputValue: evt.target.value
-        });
-        console.log(this.state.inputValue);
-        console.log(this.props.value);
+        this.props.onUpdate(evt.target.value, this.props.path);
     }
     render(){
         return (
